@@ -11,7 +11,7 @@ import UIKit
 class ColoredTileCell: UICollectionViewCell {
     var color: UIColor? {
         didSet {
-            self.contentView.backgroundColor = color
+            self.contentView.backgroundColor = color != nil ? color : UIColor.lightGrayColor()
         }
     }
     

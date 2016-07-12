@@ -8,31 +8,28 @@
 
 import UIKit
 
+protocol ConnecterDelegate: class {
+    func shouldStartConnecting(from origin: CGPoint) -> Bool
+    func connect(origin: CGPoint, with destination: CGPoint)
+}
+
 class ConnecterView: UIImageView {
-    lazy var panRecognizer: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+    weak var panRecognizer: UIPanGestureRecognizer? {
+        didSet {
+            guard let panRecognizer = self.panRecognizer else { return }
+            panRecognizer.addTarget(self, action: #selector(handlePan))
+        }
+    }
     private var origin: CGPoint?
-    private var destination: CGPoint?
-    
-    init() {
-        super.init(frame: CGRectZero)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-    
-    func setup() {
-        addGestureRecognizer(panRecognizer)
-        userInteractionEnabled = true
-    }
+    weak var delegate: ConnecterDelegate?
     
     func handlePan(recognizer: UIPanGestureRecognizer) {
         let location = recognizer.locationInView(self)
         
         switch(recognizer.state) {
         case .Began:
+            origin = nil
+            guard delegate?.shouldStartConnecting(from: location) == true else { return }
             origin = location
             
         case .Changed:
@@ -52,9 +49,9 @@ class ConnecterView: UIImageView {
             UIGraphicsEndImageContext()
             
         case .Ended:
+            guard let origin = origin else { return }
             image = nil
-            destination = location
-            print("From \(origin) to \(destination))")
+            delegate?.connect(origin, with: location)
             
         default:
             image = nil
