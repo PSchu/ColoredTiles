@@ -13,7 +13,8 @@
 		8781DB741D354F4100D1B902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8781DB731D354F4100D1B902 /* Assets.xcassets */; };
 		8781DB771D354F4100D1B902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8781DB751D354F4100D1B902 /* LaunchScreen.storyboard */; };
 		8781DB821D354F4100D1B902 /* ColorTilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB811D354F4100D1B902 /* ColorTilesTests.swift */; };
-		8781DB8D1D3550F100D1B902 /* ColoredTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB8C1D3550F100D1B902 /* ColoredTile.swift */; };
+		8781DB8D1D3550F100D1B902 /* ColoredTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */; };
+		8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DBBC1D35809300D1B902 /* ConnecterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,8 @@
 		8781DB7D1D354F4100D1B902 /* ColorTilesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorTilesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8781DB811D354F4100D1B902 /* ColorTilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTilesTests.swift; sourceTree = "<group>"; };
 		8781DB831D354F4100D1B902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8781DB8C1D3550F100D1B902 /* ColoredTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredTile.swift; sourceTree = "<group>"; };
+		8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredTileCell.swift; sourceTree = "<group>"; };
+		8781DBBC1D35809300D1B902 /* ConnecterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnecterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,8 @@
 				8781DB731D354F4100D1B902 /* Assets.xcassets */,
 				8781DB751D354F4100D1B902 /* LaunchScreen.storyboard */,
 				8781DB781D354F4100D1B902 /* Info.plist */,
-				8781DB8C1D3550F100D1B902 /* ColoredTile.swift */,
+				8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */,
+				8781DBBC1D35809300D1B902 /* ConnecterView.swift */,
 			);
 			path = ColorTiles;
 			sourceTree = "<group>";
@@ -200,9 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8781DB8D1D3550F100D1B902 /* ColoredTile.swift in Sources */,
+				8781DB8D1D3550F100D1B902 /* ColoredTileCell.swift in Sources */,
 				8781DB6F1D354F4100D1B902 /* ColorTilesViewController.swift in Sources */,
 				8781DB6D1D354F4100D1B902 /* AppDelegate.swift in Sources */,
+				8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +398,7 @@
 				8781DB881D354F4100D1B902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8781DB891D354F4100D1B902 /* Build configuration list for PBXNativeTarget "ColorTilesTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +407,7 @@
 				8781DB8B1D354F4100D1B902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

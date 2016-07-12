@@ -8,10 +8,17 @@
 
 import UIKit
 
-class ColoredTile: UICollectionViewCell {
+class ColoredTileCell: UICollectionViewCell {
+    var color: UIColor? {
+        didSet {
+            self.contentView.backgroundColor = color
+        }
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.contentView.backgroundColor = UIColor.yellowColor()
+        self.contentView.backgroundColor = UIColor.lightGrayColor()
         self.contentView.layer.borderColor = UIColor.darkGrayColor().CGColor
         self.contentView.layer.borderWidth = 1
     }
