@@ -11,8 +11,8 @@ import UIKit
 struct ColorTile {
     let color: UIColor?
     
-    static func defaultTiles() -> [ColorTile] {
-        return [0,1,2,3,4,5,6,7].map { _ in return ColorTile(color: nil)}
+    init(color: UIColor? = nil) {
+        self.color = color
     }
     
     func isActive() -> Bool {
@@ -47,7 +47,7 @@ enum TileSection {
     }
     
     static func defaultSetup() -> [TileSection] {
-        return [0,1,2,3].map { _ in return TileSection.Double(ColorTile(color: nil), ColorTile(color: nil)) }
+        return [0,1,2,3].map { _ in return TileSection.Double(ColorTile(), ColorTile()) }
     }
     
     func section(with colorTile: ColorTile, on index: Int) -> TileSection? {

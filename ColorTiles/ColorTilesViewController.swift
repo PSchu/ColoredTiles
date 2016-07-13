@@ -12,6 +12,11 @@ import UIKit
 class ColorTilesViewController: UICollectionViewController {
     let panRecognizer = UIPanGestureRecognizer()
     var tileSections: [TileSection] = TileSection.defaultSetup()
+    var colorPicker: ColorPickerController? {
+        didSet {
+            colorPicker?.delegate = self
+        }
+    }
     private var origin: CGPoint?
     
     @IBOutlet weak var connector: ConnecterView!
@@ -34,6 +39,22 @@ class ColorTilesViewController: UICollectionViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+}
+
+//MARK: ColorPickerDelegate
+extension ColorTilesViewController: ColorPickerDelegate {
+    func setColor(of point: CGPoint, to color: UIColor) {
+        guard let indexPath = collectionView?.indexPathForItemAtPoint(point) else { return }
+        guard let newSection = tileSections[indexPath.section].section(with: ColorTile(color: color), on: indexPath.item) else { return }
+        
+        tileSections.replaceRange(indexPath.section..<indexPath.section+1, with: [newSection])
+        
+        collectionView?.reloadItemsAtIndexPaths([indexPath])
+    }
+    
+    func originViewController() -> UIViewController {
+        return self
     }
 }
 
@@ -84,11 +105,11 @@ extension ColorTilesViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         guard indexPath.section < tileSections.count else { return }
-        guard let newSection = tileSections[indexPath.section].section(with: ColorTile(color: UIColor.yellowColor()), on: indexPath.item) else { return }
-        
-        tileSections.replaceRange(indexPath.section..<indexPath.section+1, with: [newSection])
-
-        collectionView.reloadItemsAtIndexPaths([indexPath])
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+            let origin = cell.contentView.convertPoint(cell.contentView.center, toView: collectionView)
+            colorPicker = ColorPickerController(origin: origin)
+            colorPicker?.show()
+        }
     }
 }
 
