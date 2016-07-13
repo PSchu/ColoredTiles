@@ -40,7 +40,14 @@ class ColorPickerController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addGestureRecognizer(tapRecognizer)
+        view.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.5)
+        
+        setupButtons()
+    }
+    
+    func setupButtons() {
         redButton.backgroundColor = UIColor.ctRedColor()
         blueButton.backgroundColor = UIColor.ctBlueColor()
         greenButton.backgroundColor = UIColor.ctGreenColor()
@@ -51,17 +58,23 @@ class ColorPickerController : UIViewController {
             button.layer.borderColor = UIColor.darkGrayColor().CGColor
             button.layer.cornerRadius = 8
         }
-        view.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.5)
     }
+    
     
     func show() {
         guard let originController = delegate?.originViewController() else { return }
         
+        installView(to: originController)
+        animateAppear(to: originController.view.frame)
+    }
+    
+    func installView(to originController: UIViewController) {
         originController.addChildViewController(self)
         originController.view.addSubview(self.view)
         self.didMoveToParentViewController(originController)
-        self.view.frame = originController.view.frame
-        
+    }
+    
+    func animateAppear(to frame: CGRect) {
         view.frame.origin = origin
         view.frame.size = CGSizeZero
         buttonWidthConstraint.constant = 0
@@ -70,13 +83,11 @@ class ColorPickerController : UIViewController {
         view.layoutIfNeeded()
         
         UIView.animateWithDuration(0.5) {
-
             self.buttonWidthConstraint.constant = 150
             self.buttonHeightConstraint.constant = 150
-            self.view.frame = originController.view.frame
+            self.view.frame = frame
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
-            
         }
     }
     
