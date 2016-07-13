@@ -39,7 +39,7 @@ class ConnecterView: UIImageView {
             CGContextSetLineWidth(currentContext, 20.0);
             CGContextSetStrokeColorWithColor(currentContext, UIColor.blueColor().CGColor);
             CGContextMoveToPoint(currentContext, origin.x, origin.y);
-            CGContextAddLineToPoint(currentContext, location.x, location.y)
+            CGContextAddLineToPoint(currentContext, location.x, origin.y)
             CGContextSetLineCap(currentContext, .Round)
             CGContextSetBlendMode(UIGraphicsGetCurrentContext(), .Normal)
             CGContextStrokePath(currentContext)
@@ -51,7 +51,7 @@ class ConnecterView: UIImageView {
         case .Ended:
             guard let origin = origin else { return }
             image = nil
-            delegate?.connect(origin, with: location)
+            delegate?.connect(origin, with: CGPoint(x: location.x, y: origin.y))
             
         default:
             image = nil

@@ -18,9 +18,9 @@ class ColoredTileCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.contentView.backgroundColor = UIColor.lightGrayColor()
-        self.contentView.layer.borderColor = UIColor.darkGrayColor().CGColor
-        self.contentView.layer.borderWidth = 1
+        contentView.backgroundColor = UIColor.lightGrayColor()
+        contentView.layer.borderColor = UIColor.darkGrayColor().CGColor
+        contentView.layer.borderWidth = 1
     }
 
 }
