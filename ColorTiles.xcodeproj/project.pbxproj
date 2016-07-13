@@ -15,6 +15,7 @@
 		8781DB821D354F4100D1B902 /* ColorTilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB811D354F4100D1B902 /* ColorTilesTests.swift */; };
 		8781DB8D1D3550F100D1B902 /* ColoredTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */; };
 		8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DBBC1D35809300D1B902 /* ConnecterView.swift */; };
+		87C5B2151D36213E00A8531C /* TileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C5B2141D36213E00A8531C /* TileModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		8781DB831D354F4100D1B902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredTileCell.swift; sourceTree = "<group>"; };
 		8781DBBC1D35809300D1B902 /* ConnecterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnecterView.swift; sourceTree = "<group>"; };
+		87C5B2141D36213E00A8531C /* TileModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				8781DB781D354F4100D1B902 /* Info.plist */,
 				8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */,
 				8781DBBC1D35809300D1B902 /* ConnecterView.swift */,
+				87C5B2141D36213E00A8531C /* TileModels.swift */,
 			);
 			path = ColorTiles;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				8781DB8D1D3550F100D1B902 /* ColoredTileCell.swift in Sources */,
 				8781DB6F1D354F4100D1B902 /* ColorTilesViewController.swift in Sources */,
+				87C5B2151D36213E00A8531C /* TileModels.swift in Sources */,
 				8781DB6D1D354F4100D1B902 /* AppDelegate.swift in Sources */,
 				8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */,
 			);
