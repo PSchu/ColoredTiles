@@ -54,7 +54,7 @@ extension ColorTilesViewController: ConnecterDelegate {
             let color = tileSections[originIndexPath.section].color(of: originIndexPath.item)
             tileSections.replaceRange(originIndexPath.section..<originIndexPath.section+1, with: [TileSection.Single(ColorTile(color: color))])
 
-            collectionView?.reloadData()
+            collectionView?.reloadSections(NSIndexSet(index: originIndexPath.section))
         }
     }
 }
@@ -88,8 +88,7 @@ extension ColorTilesViewController {
         
         tileSections.replaceRange(indexPath.section..<indexPath.section+1, with: [newSection])
 
-
-        collectionView.reloadData()
+        collectionView.reloadItemsAtIndexPaths([indexPath])
     }
 }
 
