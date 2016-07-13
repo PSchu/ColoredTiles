@@ -15,8 +15,9 @@
 		8781DB821D354F4100D1B902 /* ColorTilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB811D354F4100D1B902 /* ColorTilesTests.swift */; };
 		8781DB8D1D3550F100D1B902 /* ColoredTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */; };
 		8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DBBC1D35809300D1B902 /* ConnecterView.swift */; };
+		87BF1C631D36E0CC00C0F70F /* ColorPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87BF1C621D36E0CC00C0F70F /* ColorPickerController.xib */; };
 		87C5B2151D36213E00A8531C /* TileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C5B2141D36213E00A8531C /* TileModels.swift */; };
-		87FD47891D36CE400048A89F /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD47881D36CE400048A89F /* ColorPicker.swift */; };
+		87FD47891D36CE400048A89F /* ColorPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD47881D36CE400048A89F /* ColorPickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +43,9 @@
 		8781DB831D354F4100D1B902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredTileCell.swift; sourceTree = "<group>"; };
 		8781DBBC1D35809300D1B902 /* ConnecterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnecterView.swift; sourceTree = "<group>"; };
+		87BF1C621D36E0CC00C0F70F /* ColorPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerController.xib; sourceTree = "<group>"; };
 		87C5B2141D36213E00A8531C /* TileModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileModels.swift; sourceTree = "<group>"; };
-		87FD47881D36CE400048A89F /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		87FD47881D36CE400048A89F /* ColorPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,8 @@
 				8781DB8C1D3550F100D1B902 /* ColoredTileCell.swift */,
 				8781DBBC1D35809300D1B902 /* ConnecterView.swift */,
 				87C5B2141D36213E00A8531C /* TileModels.swift */,
-				87FD47881D36CE400048A89F /* ColorPicker.swift */,
+				87FD47881D36CE400048A89F /* ColorPickerController.swift */,
+				87BF1C621D36E0CC00C0F70F /* ColorPickerController.xib */,
 			);
 			path = ColorTiles;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				8781DB771D354F4100D1B902 /* LaunchScreen.storyboard in Resources */,
 				8781DB741D354F4100D1B902 /* Assets.xcassets in Resources */,
 				8781DB721D354F4100D1B902 /* Main.storyboard in Resources */,
+				87BF1C631D36E0CC00C0F70F /* ColorPickerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +218,7 @@
 				87C5B2151D36213E00A8531C /* TileModels.swift in Sources */,
 				8781DB6D1D354F4100D1B902 /* AppDelegate.swift in Sources */,
 				8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */,
-				87FD47891D36CE400048A89F /* ColorPicker.swift in Sources */,
+				87FD47891D36CE400048A89F /* ColorPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

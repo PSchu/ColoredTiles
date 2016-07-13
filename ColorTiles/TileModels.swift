@@ -8,6 +8,36 @@
 
 import UIKit
 
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
+    
+    static func ctRedColor() -> UIColor {
+        return UIColor(netHex: 0xF44336)
+    }
+    
+    static func ctBlueColor() -> UIColor {
+        return UIColor(netHex: 0x448AFF)
+    }
+    
+    static func ctGreenColor() ->  UIColor {
+        return UIColor(netHex: 0x4CAF50)
+    }
+    
+    static func ctYellowColor() -> UIColor {
+        return UIColor(netHex: 0xFFEB3B)
+    }
+}
+
 struct ColorTile {
     let color: UIColor?
     
@@ -52,11 +82,11 @@ enum TileSection {
     
     func section(with colorTile: ColorTile, on index: Int) -> TileSection? {
         switch self {
-        case .Single(let tile) where index == 0 && !tile.isActive():
+        case .Single(_) where index == 0:
             return .Single(colorTile)
-        case .Double(let leftTile, let rightTile) where index == 0 && !leftTile.isActive():
+        case .Double(_, let rightTile) where index == 0:
             return Double(colorTile, rightTile)
-        case .Double(let leftTile,  let rightTile) where index == 1 && !rightTile.isActive():
+        case .Double(let leftTile, _) where index == 1:
             return Double(leftTile, colorTile)
         default:
             return nil

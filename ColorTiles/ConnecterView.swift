@@ -37,7 +37,7 @@ class ConnecterView: UIImageView {
             UIGraphicsBeginImageContext(frame.size);
             let currentContext = UIGraphicsGetCurrentContext();
             CGContextSetLineWidth(currentContext, 20.0);
-            CGContextSetStrokeColorWithColor(currentContext, UIColor.blueColor().CGColor);
+            CGContextSetStrokeColorWithColor(currentContext, UIColor(netHex: 0x607D8B).CGColor);
             CGContextMoveToPoint(currentContext, origin.x, origin.y);
             CGContextAddLineToPoint(currentContext, location.x, origin.y)
             CGContextSetLineCap(currentContext, .Round)
