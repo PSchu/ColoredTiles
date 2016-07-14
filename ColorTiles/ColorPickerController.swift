@@ -56,7 +56,7 @@ class ColorPickerController : UIViewController {
         [redButton,blueButton,yellowButton,greenButton].forEach { (button) in
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.darkGrayColor().CGColor
-            button.layer.cornerRadius = 8
+            button.layer.cornerRadius = 75
         }
     }
     
@@ -71,23 +71,18 @@ class ColorPickerController : UIViewController {
     func installView(to originController: UIViewController) {
         originController.addChildViewController(self)
         originController.view.addSubview(self.view)
+        self.view.frame = originController.view.frame
         self.didMoveToParentViewController(originController)
     }
     
     func animateAppear(to frame: CGRect) {
-        view.frame.origin = origin
-        view.frame.size = CGSizeZero
-        buttonWidthConstraint.constant = 0
-        buttonHeightConstraint.constant = 0
-        view.setNeedsLayout()
-        view.layoutIfNeeded()
-        
+        [redButton,blueButton,yellowButton,greenButton].forEach { button in
+            button.layer.transform = CATransform3DMakeScale(0, 0, 0)
+        }
         UIView.animateWithDuration(0.5) {
-            self.buttonWidthConstraint.constant = 150
-            self.buttonHeightConstraint.constant = 150
-            self.view.frame = frame
-            self.view.setNeedsLayout()
-            self.view.layoutIfNeeded()
+            [self.redButton,self.blueButton,self.yellowButton,self.greenButton].forEach { button in
+                button.layer.transform = CATransform3DMakeScale(1, 1, 1)
+            }
         }
     }
     
@@ -96,15 +91,10 @@ class ColorPickerController : UIViewController {
     }
     
     func dismiss(with color: UIColor?) {
-        self.view.layoutIfNeeded()
         UIView.animateWithDuration(0.5, animations: {
-            self.buttonWidthConstraint.constant = 0
-            self.buttonHeightConstraint.constant = 0
-            self.view.frame.origin = self.origin
-            self.view.frame.size = CGSizeZero
-            
-            self.view.setNeedsLayout()
-            self.view.layoutIfNeeded()
+            [self.redButton,self.blueButton,self.yellowButton,self.greenButton].forEach { button in
+                button.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
+            }
             if let color = color {
                 self.delegate?.setColor(of: self.origin, to: color)
             }
