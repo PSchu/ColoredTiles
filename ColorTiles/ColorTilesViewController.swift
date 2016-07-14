@@ -12,6 +12,10 @@ import UIKit
 class ColorTilesViewController: UICollectionViewController {
     let panRecognizer = UIPanGestureRecognizer()
     var tileSections: [TileSection] = TileSection.defaultSetup()
+    var idleTimer: NSTimer?
+    
+    static let maxIdleTime: NSTimeInterval = 5
+    
     var colorPicker: ColorPickerController? {
         didSet {
             colorPicker?.delegate = self
@@ -26,6 +30,7 @@ class ColorTilesViewController: UICollectionViewController {
         connector.delegate = self
         collectionView?.addGestureRecognizer(panRecognizer)
         connector.panRecognizer = panRecognizer
+        resetIdleTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +44,25 @@ class ColorTilesViewController: UICollectionViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func resetIdleTimer() {
+        if idleTimer == nil {
+            idleTimer = NSTimer.scheduledTimerWithTimeInterval(ColorTilesViewController.maxIdleTime, target: self, selector: #selector(idleTimerExeded), userInfo: nil, repeats: false)
+        } else if fabs(Double(idleTimer?.fireDate.timeIntervalSinceNow ?? 0)) < ColorTilesViewController.maxIdleTime-1 {
+            idleTimer?.fireDate = NSDate(timeIntervalSinceNow: ColorTilesViewController.maxIdleTime)
+        }
+    }
+    
+    func idleTimerExeded() {
+        idleTimer = nil
+        print("Do something")
+        resetIdleTimer()
+    }
+    
+    override func nextResponder() -> UIResponder? {
+        resetIdleTimer()
+        return super.nextResponder()
     }
 }
 

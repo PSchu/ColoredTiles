@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		874D1C941D381EDC00ED42AF /* Onboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D1C931D381EDC00ED42AF /* Onboarder.swift */; };
 		8781DB6D1D354F4100D1B902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB6C1D354F4100D1B902 /* AppDelegate.swift */; };
 		8781DB6F1D354F4100D1B902 /* ColorTilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DB6E1D354F4100D1B902 /* ColorTilesViewController.swift */; };
 		8781DB721D354F4100D1B902 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8781DB701D354F4100D1B902 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		874D1C931D381EDC00ED42AF /* Onboarder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarder.swift; sourceTree = "<group>"; };
 		8781DB691D354F4100D1B902 /* ColorTiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8781DB6C1D354F4100D1B902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8781DB6E1D354F4100D1B902 /* ColorTilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTilesViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				8781DB6C1D354F4100D1B902 /* AppDelegate.swift */,
 				8781DB6E1D354F4100D1B902 /* ColorTilesViewController.swift */,
+				874D1C931D381EDC00ED42AF /* Onboarder.swift */,
 				8781DB701D354F4100D1B902 /* Main.storyboard */,
 				8781DB731D354F4100D1B902 /* Assets.xcassets */,
 				8781DB751D354F4100D1B902 /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 				87C5B2151D36213E00A8531C /* TileModels.swift in Sources */,
 				8781DB6D1D354F4100D1B902 /* AppDelegate.swift in Sources */,
 				8781DBBD1D35809300D1B902 /* ConnecterView.swift in Sources */,
+				874D1C941D381EDC00ED42AF /* Onboarder.swift in Sources */,
 				87FD47891D36CE400048A89F /* ColorPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
