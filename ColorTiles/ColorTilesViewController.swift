@@ -13,6 +13,7 @@ class ColorTilesViewController: UICollectionViewController {
     let panRecognizer = UIPanGestureRecognizer()
     var tileSections: [TileSection] = TileSection.defaultSetup()
     var idleTimer: NSTimer?
+    var onboarder: Onboarder = Onboarder()
     
     static let maxIdleTime: NSTimeInterval = 5
     
@@ -27,6 +28,7 @@ class ColorTilesViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onboarder.delegate = self
         connector.delegate = self
         collectionView?.addGestureRecognizer(panRecognizer)
         connector.panRecognizer = panRecognizer
@@ -56,7 +58,7 @@ class ColorTilesViewController: UICollectionViewController {
     
     func idleTimerExeded() {
         idleTimer = nil
-        print("Do something")
+        onboarder.showOnboardingAnimation()
         resetIdleTimer()
     }
     
@@ -65,6 +67,8 @@ class ColorTilesViewController: UICollectionViewController {
         return super.nextResponder()
     }
 }
+
+extension ColorTilesViewController: OnboarderDelegate {}
 
 //MARK: ColorPickerDelegate
 extension ColorTilesViewController: ColorPickerDelegate {
