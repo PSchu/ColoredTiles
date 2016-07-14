@@ -8,8 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorPickerController" customModule="ColorTiles" customModuleProvider="target">
             <connections>
                 <outlet property="blueButton" destination="6vV-Hr-N5j" id="1Fd-RL-ppO"/>
-                <outlet property="buttonHeightConstraint" destination="KT9-ir-HPw" id="ZxF-2o-NUK"/>
-                <outlet property="buttonWidthConstraint" destination="uph-Zc-Bev" id="RZE-7B-oTL"/>
                 <outlet property="greenButton" destination="Aq9-Pf-FTi" id="2aU-jF-PHe"/>
                 <outlet property="redButton" destination="TKs-YR-esC" id="a3F-kc-z8Q"/>
                 <outlet property="view" destination="WoU-Ab-kjK" id="Zcq-d1-7aN"/>

@@ -17,8 +17,6 @@ class ColorPickerController : UIViewController {
     let origin: CGPoint
     weak var delegate: ColorPickerDelegate?
     
-    @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
@@ -93,7 +91,7 @@ class ColorPickerController : UIViewController {
     func dismiss(with color: UIColor?) {
         UIView.animateWithDuration(0.5, animations: {
             [self.redButton,self.blueButton,self.yellowButton,self.greenButton].forEach { button in
-                button.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
+                button.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1   )
             }
             if let color = color {
                 self.delegate?.setColor(of: self.origin, to: color)
